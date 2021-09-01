@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo Generator", "Bingo Generator.csproj", "{A9178716-1AEA-40A0-8943-221F4FA2BF5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98D67D1E-9A3B-48FF-908B-48B04F07FC95} = {98D67D1E-9A3B-48FF-908B-48B04F07FC95}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibBingo", "LibBingo\LibBingo.csproj", "{98D67D1E-9A3B-48FF-908B-48B04F07FC95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{A9178716-1AEA-40A0-8943-221F4FA2BF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9178716-1AEA-40A0-8943-221F4FA2BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9178716-1AEA-40A0-8943-221F4FA2BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D67D1E-9A3B-48FF-908B-48B04F07FC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D67D1E-9A3B-48FF-908B-48B04F07FC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D67D1E-9A3B-48FF-908B-48B04F07FC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D67D1E-9A3B-48FF-908B-48B04F07FC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
