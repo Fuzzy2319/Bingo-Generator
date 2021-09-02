@@ -46,6 +46,7 @@
     <Compile Include="CategoryFactory.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="CheckFactory.cs" />
+    <Compile Include="CheckMin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

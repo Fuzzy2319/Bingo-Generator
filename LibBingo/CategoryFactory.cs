@@ -32,8 +32,6 @@ namespace LibBingo
             CheckBox checkBox = (CheckBox)sender;
             Category category = CategoryFactory.Categories.Find(categ => categ.Name == checkBox.Text);
             category.IsActive = checkBox.Checked;
-
-            MessageBox.Show(category.IsActive.ToString(), category.Name);
         }
     }
 }

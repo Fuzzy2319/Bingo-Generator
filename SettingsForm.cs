@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibBingo;
+using Newtonsoft.Json;
 
 namespace Bingo_Generator
 {
@@ -32,7 +33,28 @@ namespace Bingo_Generator
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test");
+            List<Check> possibleChecks = CheckFactory.Checks.FindAll(check => check.Category.IsActive);
+
+            if (possibleChecks.Count < 25)
+            {
+                MessageBox.Show("Insufficient number of checks\nPlease select other settings", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Random random = new Random();
+                CheckMin[] checks = new CheckMin[25];
+
+                for (int ind = 0; ind < 25; ind += 1)
+                {
+                    int checkInd = random.Next(possibleChecks.Count);
+
+                    checks[ind] = new CheckMin(possibleChecks[checkInd].Name);
+
+                    possibleChecks.RemoveAt(checkInd);
+                }
+
+                Clipboard.SetText(JsonConvert.SerializeObject(checks, Formatting.Indented));
+            }
         }
     }
 }
