@@ -29,5 +29,10 @@ namespace Bingo_Generator
                 this.flpMain.Controls.Add(checkBox);
             }
         }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("test");
+        }
     }
 }

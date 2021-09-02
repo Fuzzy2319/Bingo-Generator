@@ -56,6 +56,7 @@ namespace Bingo_Generator
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Generate Grid";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // SettingsForm
             // 
