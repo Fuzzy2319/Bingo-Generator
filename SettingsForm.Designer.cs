@@ -29,20 +29,52 @@ namespace Bingo_Generator
         /// </summary>
         private void InitializeComponent()
         {
+            this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnGenerate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // flpMain
+            // 
+            this.flpMain.AutoScroll = true;
+            this.flpMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpMain.BackColor = System.Drawing.Color.Transparent;
+            this.flpMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMain.Location = new System.Drawing.Point(0, 0);
+            this.flpMain.Margin = new System.Windows.Forms.Padding(0);
+            this.flpMain.Name = "flpMain";
+            this.flpMain.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMain.Size = new System.Drawing.Size(800, 450);
+            this.flpMain.TabIndex = 0;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerate.Location = new System.Drawing.Point(658, 382);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(130, 56);
+            this.btnGenerate.TabIndex = 0;
+            this.btnGenerate.Text = "Generate Grid";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            // 
+            // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.flpMain);
+            this.Controls.Add(this.btnGenerate);
+            this.Name = "SettingsForm";
+            this.Text = "BingoGenerator";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flpMain;
+        private System.Windows.Forms.Button btnGenerate;
     }
 }
 

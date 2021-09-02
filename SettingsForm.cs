@@ -17,9 +17,16 @@ namespace Bingo_Generator
         public SettingsForm()
         {
             InitializeComponent();
-            foreach(Check check in CheckFactory.Checks)
+            this.btnGenerate.BringToFront();
+
+            foreach (Category category in CategoryFactory.Categories)
             {
-                MessageBox.Show(check.Name, check.Category);
+                CheckBox checkBox = new CheckBox();
+                checkBox.Text = category.Name;
+                checkBox.Checked = category.IsActive;
+                checkBox.CheckedChanged += CategoryFactory.ChangeCategoryState;
+
+                this.flpMain.Controls.Add(checkBox);
             }
         }
     }

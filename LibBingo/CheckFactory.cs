@@ -10,18 +10,19 @@ namespace LibBingo
     {
         private static List<Check> checks;
 
-
         public static List<Check> Checks { get => checks; }
 
         static CheckFactory()
         {
             CheckFactory.checks = new List<Check>();
+
             string checksDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Bingo Generator\Checks\";
+
             foreach (string file in Directory.EnumerateFiles(checksDir))
             {
                 foreach (string checkName in File.ReadLines(file))
                 {
-                    CheckFactory.checks.Add(new Check(checkName, Path.GetFileNameWithoutExtension(file)));
+                    CheckFactory.checks.Add(new Check(checkName, CategoryFactory.Categories.Find(category => category.Name == Path.GetFileNameWithoutExtension(file))));
                 }
             }
         }

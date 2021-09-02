@@ -9,12 +9,12 @@ namespace LibBingo
     public class Check
     {
         private string name;
-        private string category;
+        private Category category;
         
         public string Name { get => name; }
-        public string Category { get => category; set => category = value; }
+        public Category Category { get => category; }
 
-        public Check(string name, string category)
+        public Check(string name, Category category)
         {
             this.name = name;
             this.category = category;
