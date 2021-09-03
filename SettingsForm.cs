@@ -19,6 +19,7 @@ namespace Bingo_Generator
         {
             InitializeComponent();
             this.btnGenerate.BringToFront();
+            this.sfdOutput.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             foreach (Category category in CategoryFactory.Categories)
             {
@@ -33,6 +34,7 @@ namespace Bingo_Generator
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            this.sfdOutput.FileName = DateTime.Now.ToString("yyMMdd-hhmmss") + "_bingo";
             List<Check> possibleChecks = CheckFactory.Checks.FindAll(check => check.Category.IsActive);
 
             if (possibleChecks.Count < 25)
@@ -53,7 +55,15 @@ namespace Bingo_Generator
                     possibleChecks.RemoveAt(checkInd);
                 }
 
-                Clipboard.SetText(JsonConvert.SerializeObject(checks, Formatting.Indented));
+                string output = JsonConvert.SerializeObject(checks);
+
+                if (this.sfdOutput.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(this.sfdOutput.FileName, output);
+                    Clipboard.SetText(output);
+
+                    MessageBox.Show("Grid successfuly generated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

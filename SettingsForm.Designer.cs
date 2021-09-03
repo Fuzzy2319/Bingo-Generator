@@ -31,6 +31,7 @@ namespace Bingo_Generator
         {
             this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.sfdOutput = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // flpMain
@@ -58,6 +59,10 @@ namespace Bingo_Generator
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
+            // sfdOutput
+            // 
+            this.sfdOutput.Filter = "txt files (*.txt)|*.txt";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -76,6 +81,7 @@ namespace Bingo_Generator
 
         private System.Windows.Forms.FlowLayoutPanel flpMain;
         private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.SaveFileDialog sfdOutput;
     }
 }
 
