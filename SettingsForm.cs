@@ -17,7 +17,7 @@ namespace Bingo_Generator
     {
         public SettingsForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.btnGenerate.BringToFront();
             this.sfdOutput.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 

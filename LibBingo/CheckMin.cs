@@ -8,7 +8,7 @@ namespace LibBingo
 {
     public class CheckMin
     {
-        private string name;
+        protected string name;
 
         public string Name { get => name; }
 

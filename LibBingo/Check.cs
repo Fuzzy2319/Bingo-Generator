@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibBingo
 {
-    public class Check
+    public class Check : CheckMin
     {
-        private string name;
         private Category category;
         
-        public string Name { get => name; }
         public Category Category { get => category; }
 
-        public Check(string name, Category category)
+        public Check(string name, Category category) : base(name)
         {
-            this.name = name;
             this.category = category;
         }
     }
