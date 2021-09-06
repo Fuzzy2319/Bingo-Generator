@@ -85,6 +85,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Checks\Battlesquid.bgc" />
+    <None Include="Checks\Big Octos and Gunboats.bgc" />
+    <None Include="Checks\Great Fairies.bgc" />
+    <None Include="Checks\Island Puzzles.bgc" />
+    <None Include="Checks\Minigames.bgc" />
+    <None Include="Checks\Puzzle Secret Caves.bgc" />
+    <None Include="Checks\Short Sidequests.bgc" />
+    <None Include="Checks\Tingle Chest.bgc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,7 +114,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Checks\Dungeons.txt" />
+    <None Include="Checks\Dungeons.bgc" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

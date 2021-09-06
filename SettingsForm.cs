@@ -27,6 +27,7 @@ namespace Bingo_Generator
                 checkBox.Text = category.Name;
                 checkBox.Checked = category.IsActive;
                 checkBox.CheckedChanged += CategoryFactory.ChangeCategoryState;
+                checkBox.AutoSize = true;
 
                 this.flpMain.Controls.Add(checkBox);
             }
