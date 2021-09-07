@@ -87,8 +87,13 @@
     </Compile>
     <None Include="Checks\Battlesquid.bgc" />
     <None Include="Checks\Big Octos and Gunboats.bgc" />
+    <None Include="Checks\Combat Secret Caves.bgc" />
+    <None Include="Checks\Eye Reef Chests.bgc" />
+    <None Include="Checks\Free Gifts.bgc" />
     <None Include="Checks\Great Fairies.bgc" />
     <None Include="Checks\Island Puzzles.bgc" />
+    <None Include="Checks\Lockout Platforms and Rafts.bgc" />
+    <None Include="Checks\Long Sidequests.bgc" />
     <None Include="Checks\Minigames.bgc" />
     <None Include="Checks\Puzzle Secret Caves.bgc" />
     <None Include="Checks\Short Sidequests.bgc" />
