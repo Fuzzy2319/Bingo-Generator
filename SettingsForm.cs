@@ -24,10 +24,10 @@ namespace Bingo_Generator
             foreach (Category category in CategoryFactory.Categories)
             {
                 CheckBox checkBox = new CheckBox();
-                checkBox.Text = category.Name;
                 checkBox.Checked = category.IsActive;
                 checkBox.CheckedChanged += CategoryFactory.ChangeCategoryState;
-                checkBox.AutoSize = true;
+                checkBox.Size = new Size((int)(this.Width / 3.27f), this.Height / 20);
+                checkBox.Text = category.Name;
 
                 this.flpMain.Controls.Add(checkBox);
             }
