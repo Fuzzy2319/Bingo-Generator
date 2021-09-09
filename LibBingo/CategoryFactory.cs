@@ -24,13 +24,25 @@ namespace LibBingo
             {
                 CategoryFactory.categories.Add(new Category(Path.GetFileNameWithoutExtension(file)));
             }
+            int ind = 0;
+            foreach (string file in Directory.EnumerateFiles(checksDir))
+            {
+                string parentCateg = File.ReadLines(file).First().Replace("#require ", "");
+
+                if (parentCateg != "none")
+                {
+                    CategoryFactory.categories[ind].SetParent(CategoryFactory.categories.Find(category => category.Name == Path.GetFileNameWithoutExtension(parentCateg)));
+                }
+
+                ind += 1;
+            }
         }
 
 
         public static void ChangeCategoryState(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
-            Category category = CategoryFactory.Categories.Find(categ => categ.Name == checkBox.Text);
+            Category category = CategoryFactory.categories.Find(categ => categ.Name == checkBox.Text);
             category.IsActive = checkBox.Checked;
         }
     }

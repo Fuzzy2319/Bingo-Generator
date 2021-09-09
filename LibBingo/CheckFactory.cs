@@ -21,11 +21,17 @@ namespace LibBingo
             foreach (string file in Directory.EnumerateFiles(checksDir))
             {
                 Category category = CategoryFactory.Categories.Find(categ => categ.Name == Path.GetFileNameWithoutExtension(file));
+                string[] lines = File.ReadLines(file).ToArray();
 
-                foreach (string checkName in File.ReadLines(file))
+                for (int ind = 1; ind < lines.Length; ind +=1)
+                {
+                    CheckFactory.checks.Add(new Check(lines[ind], category));
+                }
+
+                /*foreach (string checkName in File.ReadLines(file))
                 {
                     CheckFactory.checks.Add(new Check(checkName, category));
-                }
+                }*/
             }
         }
     }

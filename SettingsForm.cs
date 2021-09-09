@@ -26,6 +26,8 @@ namespace Bingo_Generator
                 CheckBox checkBox = new CheckBox();
                 checkBox.Checked = category.IsActive;
                 checkBox.CheckedChanged += CategoryFactory.ChangeCategoryState;
+                checkBox.CheckedChanged += this.ChangeEnableState;
+                checkBox.Enabled = category.Parent == null ? true : false;
                 checkBox.Size = new Size((int)(this.Width / 3.27f), this.Height / 20);
                 checkBox.Text = category.Name;
 
@@ -65,6 +67,15 @@ namespace Bingo_Generator
 
                     MessageBox.Show("Grid successfuly generated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void ChangeEnableState(object sender, EventArgs e)
+        {
+            foreach (CheckBox checkBox in this.flpMain.Controls)
+            {
+                Category category = CategoryFactory.Categories.Find(categ => categ.Name == checkBox.Text);
+                checkBox.Enabled = category.Parent == null ? true : category.Parent.IsActive;
             }
         }
     }
