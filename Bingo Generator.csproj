@@ -85,7 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Checks\Battlesquid.bgc" />
+    <None Include="Checks\Battlesquid Minigames.bgc" />
     <None Include="Checks\Big Octos and Gunboats.bgc" />
     <None Include="Checks\Combat Secret Caves.bgc" />
     <None Include="Checks\Expensive Purchases.bgc" />
