@@ -39,6 +39,10 @@ namespace Bingo_Generator
         {
             this.sfdOutput.FileName = DateTime.Now.ToString("yyMMdd-hhmmss") + "_bingo";
             List<Check> possibleChecks = CheckFactory.Checks.FindAll(check => check.Category.IsActive);
+            if (this.lsbLogic.SelectedItem == "Normal")
+            {
+                possibleChecks = Logic.Normal(possibleChecks);
+            }
 
             if (possibleChecks.Count < 25)
             {
@@ -46,7 +50,7 @@ namespace Bingo_Generator
             }
             else
             {
-                string output = Logic.NoLimit(possibleChecks);
+                string output = Logic.GenerateOutput(possibleChecks);
 
                 if (this.sfdOutput.ShowDialog() == DialogResult.OK)
                 {
