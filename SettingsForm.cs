@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibBingo;
-using Newtonsoft.Json;
 
 namespace Bingo_Generator
 {
@@ -47,19 +46,7 @@ namespace Bingo_Generator
             }
             else
             {
-                Random random = new Random();
-                CheckMin[] checks = new CheckMin[25];
-
-                for (int ind = 0; ind < 25; ind += 1)
-                {
-                    int checkInd = random.Next(possibleChecks.Count);
-
-                    checks[ind] = new CheckMin(possibleChecks[checkInd].Name);
-
-                    possibleChecks.RemoveAt(checkInd);
-                }
-
-                string output = JsonConvert.SerializeObject(checks);
+                string output = Logic.NoLimit(possibleChecks);
 
                 if (this.sfdOutput.ShowDialog() == DialogResult.OK)
                 {
