@@ -19,6 +19,7 @@ namespace Bingo_Generator
         {
             this.InitializeComponent();
             this.btnGenerate.BringToFront();
+            this.lsbLogic.SelectedIndex = 0;
             this.sfdOutput.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             foreach (Category category in CategoryFactory.Categories)
