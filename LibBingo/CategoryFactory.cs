@@ -18,7 +18,7 @@ namespace LibBingo
         {
             CategoryFactory.categories = new List<Category>();
 
-            string checksDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Bingo Generator\Checks\";
+            string checksDir = @".\Checks\";
 
             foreach (string file in Directory.EnumerateFiles(checksDir).Where(file => file.EndsWith(".bgc")))
             {
