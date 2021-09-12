@@ -43,6 +43,10 @@ namespace Bingo_Generator
             {
                 possibleChecks = Logic.Normal(possibleChecks);
             }
+            if (this.lsbLogic.SelectedItem == "Race Mode")
+            {
+                possibleChecks = Logic.RaceMode(possibleChecks, this.flpDungeons.Controls.OfType<CheckBox>().ToList().Where(checkBox => !checkBox.Checked).ToList());
+            }
 
             if (possibleChecks.Count < 25)
             {
@@ -69,6 +73,11 @@ namespace Bingo_Generator
                 Category category = CategoryFactory.Categories.Find(categ => categ.Name == checkBox.Text);
                 checkBox.Enabled = category.Parent == null ? true : category.Parent.IsActive;
             }
+        }
+
+        private void lsbLogic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.flpDungeons.Visible = (this.lsbLogic.SelectedItem == "Race Mode");
         }
     }
 }

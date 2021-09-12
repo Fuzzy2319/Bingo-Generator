@@ -36,7 +36,17 @@ namespace Bingo_Generator
             this.lsbLogic = new System.Windows.Forms.ListBox();
             this.lblLogic = new System.Windows.Forms.Label();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpLogic = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpDungeons = new System.Windows.Forms.FlowLayoutPanel();
+            this.chkDRC = new System.Windows.Forms.CheckBox();
+            this.chkFW = new System.Windows.Forms.CheckBox();
+            this.chkTOTG = new System.Windows.Forms.CheckBox();
+            this.chkFF = new System.Windows.Forms.CheckBox();
+            this.chkET = new System.Windows.Forms.CheckBox();
+            this.chkWT = new System.Windows.Forms.CheckBox();
             this.flpMenu.SuspendLayout();
+            this.flpLogic.SuspendLayout();
+            this.flpDungeons.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpMain
@@ -57,7 +67,7 @@ namespace Bingo_Generator
             // btnGenerate
             // 
             this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerate.Location = new System.Drawing.Point(13, 3);
+            this.btnGenerate.Location = new System.Drawing.Point(13, 9);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(130, 56);
             this.btnGenerate.TabIndex = 0;
@@ -79,18 +89,19 @@ namespace Bingo_Generator
             "No Limit",
             "Normal",
             "Race Mode"});
-            this.lsbLogic.Location = new System.Drawing.Point(149, 25);
+            this.lsbLogic.Location = new System.Drawing.Point(3, 22);
             this.lsbLogic.Name = "lsbLogic";
             this.lsbLogic.Size = new System.Drawing.Size(115, 34);
             this.lsbLogic.Sorted = true;
             this.lsbLogic.TabIndex = 1;
+            this.lsbLogic.SelectedIndexChanged += new System.EventHandler(this.lsbLogic_SelectedIndexChanged);
             // 
             // lblLogic
             // 
             this.lblLogic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLogic.BackColor = System.Drawing.Color.Transparent;
             this.lblLogic.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogic.Location = new System.Drawing.Point(149, 3);
+            this.lblLogic.Location = new System.Drawing.Point(3, 0);
             this.lblLogic.Name = "lblLogic";
             this.lblLogic.Size = new System.Drawing.Size(115, 19);
             this.lblLogic.TabIndex = 2;
@@ -105,16 +116,101 @@ namespace Bingo_Generator
             this.flpMenu.BackColor = System.Drawing.Color.Transparent;
             this.flpMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flpMenu.Controls.Add(this.btnGenerate);
-            this.flpMenu.Controls.Add(this.lsbLogic);
-            this.flpMenu.Controls.Add(this.lblLogic);
+            this.flpMenu.Controls.Add(this.flpLogic);
+            this.flpMenu.Controls.Add(this.flpDungeons);
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpMenu.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flpMenu.Location = new System.Drawing.Point(0, 368);
+            this.flpMenu.Location = new System.Drawing.Point(0, 362);
             this.flpMenu.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flpMenu.Name = "flpMenu";
             this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMenu.Size = new System.Drawing.Size(800, 82);
+            this.flpMenu.Size = new System.Drawing.Size(800, 88);
             this.flpMenu.TabIndex = 3;
+            // 
+            // flpLogic
+            // 
+            this.flpLogic.Controls.Add(this.lblLogic);
+            this.flpLogic.Controls.Add(this.lsbLogic);
+            this.flpLogic.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpLogic.Location = new System.Drawing.Point(149, 3);
+            this.flpLogic.Name = "flpLogic";
+            this.flpLogic.Size = new System.Drawing.Size(121, 62);
+            this.flpLogic.TabIndex = 3;
+            // 
+            // flpDungeons
+            // 
+            this.flpDungeons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpDungeons.Controls.Add(this.chkDRC);
+            this.flpDungeons.Controls.Add(this.chkFW);
+            this.flpDungeons.Controls.Add(this.chkTOTG);
+            this.flpDungeons.Controls.Add(this.chkFF);
+            this.flpDungeons.Controls.Add(this.chkET);
+            this.flpDungeons.Controls.Add(this.chkWT);
+            this.flpDungeons.Location = new System.Drawing.Point(276, 5);
+            this.flpDungeons.Name = "flpDungeons";
+            this.flpDungeons.Size = new System.Drawing.Size(512, 60);
+            this.flpDungeons.TabIndex = 4;
+            this.flpDungeons.Visible = false;
+            // 
+            // chkDRC
+            // 
+            this.chkDRC.AutoSize = true;
+            this.chkDRC.Location = new System.Drawing.Point(3, 3);
+            this.chkDRC.Name = "chkDRC";
+            this.chkDRC.Size = new System.Drawing.Size(167, 21);
+            this.chkDRC.TabIndex = 1;
+            this.chkDRC.Text = "Dragon Roast Cavern";
+            this.chkDRC.UseVisualStyleBackColor = true;
+            // 
+            // chkFW
+            // 
+            this.chkFW.AutoSize = true;
+            this.chkFW.Location = new System.Drawing.Point(176, 3);
+            this.chkFW.Name = "chkFW";
+            this.chkFW.Size = new System.Drawing.Size(142, 21);
+            this.chkFW.TabIndex = 2;
+            this.chkFW.Text = "Forbidden Woods";
+            this.chkFW.UseVisualStyleBackColor = true;
+            // 
+            // chkTOTG
+            // 
+            this.chkTOTG.AutoSize = true;
+            this.chkTOTG.Location = new System.Drawing.Point(324, 3);
+            this.chkTOTG.Name = "chkTOTG";
+            this.chkTOTG.Size = new System.Drawing.Size(147, 21);
+            this.chkTOTG.TabIndex = 3;
+            this.chkTOTG.Text = "Tower of the Gods";
+            this.chkTOTG.UseVisualStyleBackColor = true;
+            // 
+            // chkFF
+            // 
+            this.chkFF.AutoSize = true;
+            this.chkFF.Location = new System.Drawing.Point(3, 30);
+            this.chkFF.Name = "chkFF";
+            this.chkFF.Size = new System.Drawing.Size(145, 21);
+            this.chkFF.TabIndex = 4;
+            this.chkFF.Text = "Forsaken Fortress";
+            this.chkFF.UseVisualStyleBackColor = true;
+            // 
+            // chkET
+            // 
+            this.chkET.AutoSize = true;
+            this.chkET.Location = new System.Drawing.Point(154, 30);
+            this.chkET.Name = "chkET";
+            this.chkET.Size = new System.Drawing.Size(115, 21);
+            this.chkET.TabIndex = 5;
+            this.chkET.Text = "Earth Temple";
+            this.chkET.UseVisualStyleBackColor = true;
+            // 
+            // chkWT
+            // 
+            this.chkWT.AutoSize = true;
+            this.chkWT.Location = new System.Drawing.Point(275, 30);
+            this.chkWT.Name = "chkWT";
+            this.chkWT.Size = new System.Drawing.Size(113, 21);
+            this.chkWT.TabIndex = 6;
+            this.chkWT.Text = "Wind Temple";
+            this.chkWT.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -128,6 +224,9 @@ namespace Bingo_Generator
             this.Name = "SettingsForm";
             this.Text = "BingoGenerator";
             this.flpMenu.ResumeLayout(false);
+            this.flpLogic.ResumeLayout(false);
+            this.flpDungeons.ResumeLayout(false);
+            this.flpDungeons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +240,14 @@ namespace Bingo_Generator
         private System.Windows.Forms.ListBox lsbLogic;
         private System.Windows.Forms.Label lblLogic;
         private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private System.Windows.Forms.FlowLayoutPanel flpLogic;
+        private System.Windows.Forms.FlowLayoutPanel flpDungeons;
+        private System.Windows.Forms.CheckBox chkDRC;
+        private System.Windows.Forms.CheckBox chkFW;
+        private System.Windows.Forms.CheckBox chkTOTG;
+        private System.Windows.Forms.CheckBox chkFF;
+        private System.Windows.Forms.CheckBox chkET;
+        private System.Windows.Forms.CheckBox chkWT;
     }
 }
 

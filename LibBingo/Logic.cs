@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace LibBingo
@@ -99,9 +100,14 @@ namespace LibBingo
             return possibleChecks;
         }
 
-        public static List<Check> RaceMode(List<Check> possibleChecks)
+        public static List<Check> RaceMode(List<Check> possibleChecks, List<CheckBox> inactiveDungeons)
         {
-            return possibleChecks;
+            foreach (CheckBox dungeon in inactiveDungeons)
+            {
+                possibleChecks.RemoveAll(check => check.Name.StartsWith(dungeon.Text));
+            }
+            
+            return Logic.Normal(possibleChecks);
         }
     }
 }
