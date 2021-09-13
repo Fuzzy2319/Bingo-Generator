@@ -39,13 +39,15 @@ namespace Bingo_Generator
         {
             this.sfdOutput.FileName = DateTime.Now.ToString("yyMMdd-hhmmss") + "_bingo";
             List<Check> possibleChecks = CheckFactory.Checks.FindAll(check => check.Category.IsActive);
-            if (this.lsbLogic.SelectedItem == "Normal")
+
+            if (this.chkRaceMode.Checked)
             {
-                possibleChecks = Logic.Normal(possibleChecks);
+                possibleChecks = Logic.RaceMode(possibleChecks, this.flpDungeons.Controls.OfType<CheckBox>().Where(checkBox => !checkBox.Checked).ToList());
             }
-            if (this.lsbLogic.SelectedItem == "Race Mode")
+
+            if (this.lsbLogic.SelectedItem.ToString() == "Limited")
             {
-                possibleChecks = Logic.RaceMode(possibleChecks, this.flpDungeons.Controls.OfType<CheckBox>().ToList().Where(checkBox => !checkBox.Checked).ToList());
+                possibleChecks = Logic.Limited(possibleChecks);
             }
 
             if (possibleChecks.Count < 25)
@@ -75,9 +77,9 @@ namespace Bingo_Generator
             }
         }
 
-        private void lsbLogic_SelectedIndexChanged(object sender, EventArgs e)
+        private void chkRaceMode_CheckedChanged(object sender, EventArgs e)
         {
-            this.flpDungeons.Visible = (this.lsbLogic.SelectedItem == "Race Mode");
+            this.flpDungeons.Visible = this.chkRaceMode.Checked;
         }
     }
 }

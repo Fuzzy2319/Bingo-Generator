@@ -27,11 +27,6 @@ namespace LibBingo
                 {
                     CheckFactory.checks.Add(new Check(lines[ind], category));
                 }
-
-                /*foreach (string checkName in File.ReadLines(file))
-                {
-                    CheckFactory.checks.Add(new Check(checkName, category));
-                }*/
             }
         }
     }

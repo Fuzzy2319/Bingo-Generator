@@ -24,10 +24,10 @@ namespace LibBingo
                 possibleChecks.RemoveAt(checkInd);
             }
 
-            return JsonConvert.SerializeObject(checks);
+            return JsonConvert.SerializeObject(checks).Replace("Name", "name");
         }
 
-        public static List<Check> Normal(List<Check> possibleChecks)
+        public static List<Check> Limited(List<Check> possibleChecks)
         {
             if (possibleChecks.Exists(check => check.Category.Name == "Dungeons"))
             {
@@ -107,7 +107,7 @@ namespace LibBingo
                 possibleChecks.RemoveAll(check => check.Name.StartsWith(dungeon.Text));
             }
             
-            return Logic.Normal(possibleChecks);
+            return possibleChecks;
         }
     }
 }
