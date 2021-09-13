@@ -45,6 +45,7 @@ namespace Bingo_Generator
             this.chkET = new System.Windows.Forms.CheckBox();
             this.chkWT = new System.Windows.Forms.CheckBox();
             this.chkRaceMode = new System.Windows.Forms.CheckBox();
+            this.lblDungeons = new System.Windows.Forms.Label();
             this.flpMenu.SuspendLayout();
             this.flpLogic.SuspendLayout();
             this.flpDungeons.SuspendLayout();
@@ -88,7 +89,7 @@ namespace Bingo_Generator
             this.lsbLogic.Items.AddRange(new object[] {
             "Limited",
             "No Limit"});
-            this.lsbLogic.Location = new System.Drawing.Point(3, 22);
+            this.lsbLogic.Location = new System.Drawing.Point(3, 34);
             this.lsbLogic.Name = "lsbLogic";
             this.lsbLogic.Size = new System.Drawing.Size(200, 34);
             this.lsbLogic.Sorted = true;
@@ -97,11 +98,10 @@ namespace Bingo_Generator
             // lblLogic
             // 
             this.lblLogic.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogic.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLogic.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogic.Location = new System.Drawing.Point(3, 0);
             this.lblLogic.Name = "lblLogic";
-            this.lblLogic.Size = new System.Drawing.Size(115, 19);
+            this.lblLogic.Size = new System.Drawing.Size(200, 31);
             this.lblLogic.TabIndex = 2;
             this.lblLogic.Text = "Logic :";
             this.lblLogic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,6 +139,7 @@ namespace Bingo_Generator
             // flpDungeons
             // 
             this.flpDungeons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpDungeons.Controls.Add(this.lblDungeons);
             this.flpDungeons.Controls.Add(this.chkDRC);
             this.flpDungeons.Controls.Add(this.chkFW);
             this.flpDungeons.Controls.Add(this.chkTOTG);
@@ -154,7 +155,7 @@ namespace Bingo_Generator
             // chkDRC
             // 
             this.chkDRC.AutoSize = true;
-            this.chkDRC.Location = new System.Drawing.Point(3, 3);
+            this.chkDRC.Location = new System.Drawing.Point(3, 27);
             this.chkDRC.Name = "chkDRC";
             this.chkDRC.Size = new System.Drawing.Size(167, 21);
             this.chkDRC.TabIndex = 1;
@@ -164,7 +165,7 @@ namespace Bingo_Generator
             // chkFW
             // 
             this.chkFW.AutoSize = true;
-            this.chkFW.Location = new System.Drawing.Point(176, 3);
+            this.chkFW.Location = new System.Drawing.Point(176, 27);
             this.chkFW.Name = "chkFW";
             this.chkFW.Size = new System.Drawing.Size(142, 21);
             this.chkFW.TabIndex = 2;
@@ -174,7 +175,7 @@ namespace Bingo_Generator
             // chkTOTG
             // 
             this.chkTOTG.AutoSize = true;
-            this.chkTOTG.Location = new System.Drawing.Point(3, 30);
+            this.chkTOTG.Location = new System.Drawing.Point(3, 54);
             this.chkTOTG.Name = "chkTOTG";
             this.chkTOTG.Size = new System.Drawing.Size(147, 21);
             this.chkTOTG.TabIndex = 3;
@@ -184,7 +185,7 @@ namespace Bingo_Generator
             // chkFF
             // 
             this.chkFF.AutoSize = true;
-            this.chkFF.Location = new System.Drawing.Point(156, 30);
+            this.chkFF.Location = new System.Drawing.Point(156, 54);
             this.chkFF.Name = "chkFF";
             this.chkFF.Size = new System.Drawing.Size(145, 21);
             this.chkFF.TabIndex = 4;
@@ -194,7 +195,7 @@ namespace Bingo_Generator
             // chkET
             // 
             this.chkET.AutoSize = true;
-            this.chkET.Location = new System.Drawing.Point(307, 30);
+            this.chkET.Location = new System.Drawing.Point(307, 54);
             this.chkET.Name = "chkET";
             this.chkET.Size = new System.Drawing.Size(115, 21);
             this.chkET.TabIndex = 5;
@@ -204,7 +205,7 @@ namespace Bingo_Generator
             // chkWT
             // 
             this.chkWT.AutoSize = true;
-            this.chkWT.Location = new System.Drawing.Point(3, 57);
+            this.chkWT.Location = new System.Drawing.Point(3, 81);
             this.chkWT.Name = "chkWT";
             this.chkWT.Size = new System.Drawing.Size(113, 21);
             this.chkWT.TabIndex = 6;
@@ -214,13 +215,23 @@ namespace Bingo_Generator
             // chkRaceMode
             // 
             this.chkRaceMode.AutoSize = true;
-            this.chkRaceMode.Location = new System.Drawing.Point(3, 62);
+            this.chkRaceMode.Location = new System.Drawing.Point(3, 74);
             this.chkRaceMode.Name = "chkRaceMode";
             this.chkRaceMode.Size = new System.Drawing.Size(102, 21);
             this.chkRaceMode.TabIndex = 3;
             this.chkRaceMode.Text = "Race Mode";
             this.chkRaceMode.UseVisualStyleBackColor = true;
             this.chkRaceMode.CheckedChanged += new System.EventHandler(this.chkRaceMode_CheckedChanged);
+            // 
+            // lblDungeons
+            // 
+            this.lblDungeons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDungeons.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDungeons.Location = new System.Drawing.Point(3, 0);
+            this.lblDungeons.Name = "lblDungeons";
+            this.lblDungeons.Size = new System.Drawing.Size(437, 24);
+            this.lblDungeons.TabIndex = 7;
+            this.lblDungeons.Text = "Active Dungeons :";
             // 
             // SettingsForm
             // 
@@ -260,6 +271,7 @@ namespace Bingo_Generator
         private System.Windows.Forms.CheckBox chkET;
         private System.Windows.Forms.CheckBox chkWT;
         private System.Windows.Forms.CheckBox chkRaceMode;
+        private System.Windows.Forms.Label lblDungeons;
     }
 }
 
