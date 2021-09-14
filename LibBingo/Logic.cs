@@ -29,6 +29,7 @@ namespace LibBingo
 
         public static List<Check> Limited(List<Check> possibleChecks)
         {
+            List<Check> possibleChecksTmp = new List<Check>();
             if (possibleChecks.Exists(check => check.Category.Name == "Dungeons"))
             {
                 Random random = new Random();
@@ -46,7 +47,7 @@ namespace LibBingo
                 }
 
                 possibleChecks.RemoveAll(check => check.Category.Name == "Dungeons");
-                possibleChecks.AddRange(dungeonsPossibleChecks);
+                possibleChecksTmp.AddRange(dungeonsPossibleChecks);
             }
 
             if (possibleChecks.Exists(check => check.Category.Name == "Sunken Treasure (Triforce)"))
@@ -62,7 +63,7 @@ namespace LibBingo
                     Check sunkenTreasureTriforcePossibleCheck = sunkenTreasureTriforceChecks[checkInd];
 
                     possibleChecks.RemoveAll(check => check.Category.Name == "Sunken Treasure (Triforce)");
-                    possibleChecks.Add(sunkenTreasureTriforcePossibleCheck);
+                    possibleChecksTmp.Add(sunkenTreasureTriforcePossibleCheck);
                 }
                 else
                 {
@@ -89,7 +90,7 @@ namespace LibBingo
                     }
 
                     possibleChecks.RemoveAll(check => check.Category.Name == "Sunken Treasure");
-                    possibleChecks.AddRange(sunkenTreasurePossibleChecks);
+                    possibleChecksTmp.AddRange(sunkenTreasurePossibleChecks);
                 }
                 else
                 {
@@ -97,7 +98,24 @@ namespace LibBingo
                 }
             }
 
-            return possibleChecks;
+            if (possibleChecksTmp.Count + possibleChecks.Count <= 25)
+            {
+                possibleChecksTmp.AddRange(possibleChecks);
+            }
+            else
+            {
+                Random random = new Random();
+                for (int ind = possibleChecksTmp.Count; ind < 25; ind += 1)
+                {
+                    int checkInd = random.Next(possibleChecks.Count);
+
+                    possibleChecksTmp.Add(possibleChecks[checkInd]);
+
+                    possibleChecks.RemoveAt(checkInd);
+                }
+            }
+
+            return possibleChecksTmp;
         }
 
         public static List<Check> RaceMode(List<Check> possibleChecks, List<CheckBox> inactiveDungeons)
