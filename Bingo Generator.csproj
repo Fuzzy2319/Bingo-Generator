@@ -94,7 +94,7 @@
     <None Include="Checks\Free Gifts.bgc" />
     <None Include="Checks\Great Fairies.bgc" />
     <None Include="Checks\Island Puzzles.bgc" />
-    <None Include="Checks\Lockout Platforms and Rafts.bgc" />
+    <None Include="Checks\Lookout Platforms and Rafts.bgc" />
     <None Include="Checks\Long Sidequests.bgc" />
     <None Include="Checks\Mails.bgc" />
     <None Include="Checks\Minigames.bgc" />
